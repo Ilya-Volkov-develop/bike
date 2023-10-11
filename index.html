@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20231011003343">
+    <link rel="stylesheet" href="css/style.min.css?_v=20231011230351">
     <title>Bike</title>
 </head>
   <body>
@@ -276,6 +276,21 @@
           <div class="bicycles__container __container">
             <div class="bicycles__header">
               <div class="bicycles__title title">Велосипеды</div>
+              <form>
+                <div class="__select" data-state="">
+                  <div class="__select__title" data-default="Шоссе">Шоссе</div>
+                  <div class="__select__content">
+                    <input id="singleSelect0" class="__select__input" type="radio" name="singleSelect"/>
+                    <label for="singleSelect0" class="__select__label"></label>
+                    <input id="singleSelect1" class="__select__input" type="radio" name="singleSelect" checked/>
+                    <label for="singleSelect1" class="__select__label">Шоссе</label>
+                    <input id="singleSelect2" class="__select__input" type="radio" name="singleSelect"/>
+                    <label for="singleSelect2" class="__select__label">Грэвел</label>
+                    <input id="singleSelect3" class="__select__input" type="radio" name="singleSelect"/>
+                    <label for="singleSelect3" class="__select__label">TT</label>
+                  </div>
+                </div>
+              </form>
               <div class="bicycles__menu menu-bicycles">
                 <nav class="menu-bicycles__body">
                   <ul class="menu-bicycles__list">
@@ -286,7 +301,7 @@
                 </nav>
               </div>
             </div>
-            <div class="bicycles__body _active">
+            <div class="bicycles__body _active bicycles-slider__highway">
               <div class="bicycles__column">
                 <div class="bicycles__img img-bicycles">
                   <div class="img-bicycles__container">
@@ -298,7 +313,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="bicycles__title">Cervelo Caledonia-5</div>
+                <div class="bicycles__name">Cervelo Caledonia-5</div>
               </div>
               <div class="bicycles__column">
                 <div class="bicycles__img img-bicycles">
@@ -311,7 +326,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="bicycles__title">Cannondale Systemsix Himod</div>
+                <div class="bicycles__name">Cannondale Systemsix Himod</div>
               </div>
               <div class="bicycles__column">
                 <div class="bicycles__img img-bicycles">
@@ -324,10 +339,10 @@
                     </a>
                   </div>
                 </div>
-                <div class="bicycles__title">Trek Domane SL-7</div>
+                <div class="bicycles__name">Trek Domane SL-7</div>
               </div>
             </div>
-            <div class="bicycles__body">
+            <div class="bicycles__body bicycles-slider__gravel">
               <div class="bicycles__column">
                 <div class="bicycles__img img-bicycles">
                   <div class="img-bicycles__container">
@@ -339,7 +354,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="bicycles__title">Cervelo Aspero GRX 810</div>
+                <div class="bicycles__name">Cervelo Aspero GRX 810</div>
               </div>
               <div class="bicycles__column">
                 <div class="bicycles__img img-bicycles">
@@ -352,7 +367,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="bicycles__title">Specialized S-Works Diverge</div>
+                <div class="bicycles__name">Specialized S-Works Diverge</div>
               </div>
               <div class="bicycles__column">
                 <div class="bicycles__img img-bicycles">
@@ -365,10 +380,10 @@
                     </a>
                   </div>
                 </div>
-                <div class="bicycles__title">Cannondale Topstone Lefty 3</div>
+                <div class="bicycles__name">Cannondale Topstone Lefty 3</div>
               </div>
             </div>
-            <div class="bicycles__body">
+            <div class="bicycles__body bicycles-slider__tt">
               <div class="bicycles__column">
                 <div class="bicycles__img img-bicycles">
                   <div class="img-bicycles__container">
@@ -380,7 +395,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="bicycles__title">Specialized S-Works Shiv</div>
+                <div class="bicycles__name">Specialized S-Works Shiv</div>
               </div>
               <div class="bicycles__column">
                 <div class="bicycles__img img-bicycles">
@@ -393,7 +408,7 @@
                     </a>
                   </div>
                 </div>
-                <div class="bicycles__title">BMC Timemachine 01 ONE</div>
+                <div class="bicycles__name">BMC Timemachine 01 ONE</div>
               </div>
               <div class="bicycles__column">
                 <div class="bicycles__img img-bicycles">
@@ -406,11 +421,90 @@
                     </a>
                   </div>
                 </div>
-                <div class="bicycles__title">Cervelo P-Series</div>
+                <div class="bicycles__name">Cervelo P-Series</div>
               </div>
             </div>
           </div>
         </div>
+        <div class="page__coaching coaching">
+          <div class="coaching__container __container">
+            <div class="coaching__body">
+              <div class="coaching__column">
+                <div class="coaching__contant">
+                  <div class="coaching__title title">Тренировки</div>
+                  <div class="coaching__text text">
+                    Чтобы найти маршрут для тренировки можно воспользоваться
+                    сервисом Komoot, а записать эти тренировки поможет
+                    приложение Strava, а также это приложение позволит построить
+                    тренировочный план.
+                  </div>
+                </div>
+                <div class="coaching__actions">
+                  <a target="_blank" href="https://www.strava.com" class="coaching__btn"
+                    >Strava</a
+                  >
+                  <a target="_blank" href="https://www.komoot.com" class="coaching__btn"
+                    >Komoot</a
+                  >
+                </div>
+              </div>
+              <div class="coaching__column">
+                <picture><source srcset="img/coaching/1.webp" type="image/webp"><img src="img/coaching/1.png" alt="image" /></picture>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="sleder__image">
+          <div class="sl__item"><picture><source srcset="img/highway/1.webp" type="image/webp"><img src="img/highway/1.png" alt=""></picture></div>
+          <div class="sl__item"><picture><source srcset="img/highway/2.webp" type="image/webp"><img src="img/highway/2.png" alt=""></picture></div>
+          <div class="sl__item"><picture><source srcset="img/highway/3.webp" type="image/webp"><img src="img/highway/3.png" alt=""></picture></div>
+        </div> -->
+        <!-- <div class="con">
+        <div class="sleder__image __container">
+          <div class="bicycles__column2">
+            <div class="bicycles__img2 img-bicycles2">
+              <div class="img-bicycles__container2">
+                <a
+                  target="_blank"
+                  href="https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN"
+                >
+                  <picture><source srcset="img/highway/1.webp" type="image/webp"><img src="img/highway/1.png" alt="bicycles" /></picture>
+                </a>
+              </div>
+            </div>
+            <div class="bicycles__name">Cervelo Caledonia-5</div>
+          </div>
+          <div class="bicycles__column2">
+            <div class="bicycles__img2 img-bicycles2">
+              <div class="img-bicycles__container">
+                <a
+                  target="_blank"
+                  href="https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J"
+                >
+                  <picture><source srcset="img/highway/2.webp" type="image/webp"><img src="img/highway/2.png" alt="bicycles" /></picture>
+                </a>
+              </div>
+            </div>
+            <div class="bicycles__name2">Cannondale Systemsix Himod</div>
+          </div>
+          <div class="bicycles__column2">
+            <div class="bicycles__img img-bicycles2">
+              <div class="img-bicycles__container2">
+                <a
+                  target="_blank"
+                  href="https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF"
+                >
+                  <picture><source srcset="img/highway/3.webp" type="image/webp"><img src="img/highway/3.png" alt="bicycles" /></picture>
+                </a>
+              </div>
+            </div>
+            <div class="bicycles__name2">Trek Domane SL-7</div>
+          </div>
+        </div>
+      </div> -->
+
+
       </main>
       <footer></footer>
       <script
@@ -418,7 +512,7 @@
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"
       ></script>
-      <script src="js/app.min.js?_v=20231011003343"></script>
+      <script src="js/app.min.js?_v=20231011230351"></script>
     </div>
   </body>
 </html>

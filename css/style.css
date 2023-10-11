@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Reset and base styles  */
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;
@@ -162,6 +164,10 @@ body {
   font-weight: 400;
 }
 
+.wraper {
+  overflow: hidden;
+}
+
 .__container {
   max-width: 1280px;
   margin: 0 auto;
@@ -202,6 +208,10 @@ body {
 
 .page__bicycles {
   padding: 60px 0;
+}
+
+.page__coaching {
+  padding: 150px 0 120px 0;
 }
 
 .main__container {
@@ -398,10 +408,6 @@ body {
   display: none;
 }
 
-.description__slider {
-  overflow: hidden;
-}
-
 .header-description__controllers {
   display: none;
 }
@@ -465,7 +471,8 @@ body {
 }
 
 .slider {
-  width: 100%;
+  overflow: hidden;
+  min-width: 100%;
 }
 
 .slider__items {
@@ -473,9 +480,13 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 -40px 50px -40px;
+  margin: 0 -20px 50px -20px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+.slider__item {
+  width: 100%;
 }
 
 .slider__controllers {
@@ -494,9 +505,16 @@ body {
   height: 400px;
 }
 
+.item__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .item__figure {
   position: absolute;
-  left: 18px;
+  left: -2px;
   bottom: 16px;
   display: inline-block;
   width: 24.6478%;
@@ -527,6 +545,11 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 0 0 120px 0;
+}
+
+.bicycles__title {
+  margin: 0;
 }
 
 .bicycles__body {
@@ -547,22 +570,148 @@ body {
   margin: 0 15px;
 }
 
-.bicycles__img {
-  margin: 0 0 22px 0;
+.__select {
+  position: relative;
+  width: 40.145%;
+  height: 40px;
+  display: none;
 }
 
-.no-webp .img-bicycles{
-  background: url("../img/highway/Placeholder.png"); }
+.__select[data-state=active] .__select__title::before {
+  -webkit-transform: translate(-3px, -50%) rotate(-45deg);
+      -ms-transform: translate(-3px, -50%) rotate(-45deg);
+          transform: translate(-3px, -50%) rotate(-45deg);
+}
+
+.__select[data-state=active] .__select__title::after {
+  -webkit-transform: translate(3px, -50%) rotate(45deg);
+      -ms-transform: translate(3px, -50%) rotate(45deg);
+          transform: translate(3px, -50%) rotate(45deg);
+}
+
+.__select[data-state=active] .__select__content {
+  opacity: 1;
+}
+
+.__select[data-state=active] .__select__label + .__select__input + .__select__label {
+  max-height: 40px;
+  border-top-width: 1px;
+}
+
+.__select__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: solid 1px #c7ccd1;
+  cursor: pointer;
+}
+
+.__select__title::before,
+.__select__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: block;
+  width: 10px;
+  height: 2px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  background-color: #333333;
+  -webkit-transform: translate(-3px, -50%) rotate(45deg);
+      -ms-transform: translate(-3px, -50%) rotate(45deg);
+          transform: translate(-3px, -50%) rotate(45deg);
+}
+
+.__select__title::after {
+  -webkit-transform: translate(3px, -50%) rotate(-45deg);
+      -ms-transform: translate(3px, -50%) rotate(-45deg);
+          transform: translate(3px, -50%) rotate(-45deg);
+}
+
+.__select__content {
+  position: absolute;
+  top: 40px;
+  left: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(100% - 6px);
+  background-color: #ffffff;
+  border: 1px solid #c7ccd1;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  z-index: 8;
+}
+
+.__select__input {
+  display: none;
+}
+
+.__select__input:checked + label {
+  background-color: #dedede;
+}
+
+.__select__input:disabled + label {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.__select__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 40px;
+  max-height: 0;
+  padding: 0 16px;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.__select__label + input + .__select__label {
+  border-top: 0 solid rgba(199, 204, 209, 0.3764705882);
+}
+
+.__select__label:hover {
+  background-color: rgba(199, 204, 209, 0.3764705882) !important;
+}
 
 .img-bicycles {
+  margin: 0 0 22px 0;
+  padding: 20px;
+  background: url("../img/highway/Placeholder.svg") center;
+  border-radius: 20px;
   -webkit-filter: drop-shadow(-20px 60px 110px rgba(0, 0, 0, 0.07));
           filter: drop-shadow(-20px 60px 110px rgba(0, 0, 0, 0.07));
-  padding: 20px;
-  border-radius: 20px;
 }
 
-.img-bicycles__container {
-  border-radius: 20px;
+.menu-bicycles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .menu-bicycles__list {
@@ -596,6 +745,130 @@ body {
   opacity: 0.75;
 }
 
+.coaching {
+  display: none;
+}
+
+.coaching__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.coaching__column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.coaching__actions > *:not(:last-child) {
+  margin: 0 30px 0 0;
+}
+
+.coaching__btn {
+  color: #151515;
+  font-weight: 600;
+  line-height: 155.556%;
+}
+
+.coaching__btn:hover {
+  opacity: 0.75;
+}
+
+/* Слайдер */
+
+/* Слайдер запущен */
+
+/* Слайдер с точками */
+
+/* Ограничивающая оболочка */
+
+.slick-list {
+  margin: 0 -40px;
+}
+
+/* Лента слайдов */
+
+.slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* Слайд */
+
+.slick-slide {
+  margin: 0 40px;
+  background: url("../img/highway/Placeholder.svg") center;
+  background-size: cover;
+  border-radius: 20px;
+  -webkit-filter: drop-shadow(-20px 60px 110px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(-20px 60px 110px rgba(0, 0, 0, 0.1));
+}
+
+/* Слайд активный (показывается) */
+
+/* Слайд основной */
+
+/* Слайд по центру */
+
+/* Клонированный слайд */
+
+/* Точки (булиты) */
+
+/* Активная точка */
+
+/* Элемент точки */
+
+.bicycles-slider__highway .slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px 0 0 0;
+}
+
+.bicycles-slider__highway .slick-dots li {
+  margin: 0 2.5px;
+  list-style: none;
+}
+
+.bicycles-slider__highway .slick-dots li button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #cacaca;
+  border-radius: 50%;
+}
+
+.bicycles-slider__highway .slick-dots li.slick-active button {
+  background-color: #151515;
+}
+
+.bicycles-slider__highway .slick-active {
+  min-height: auto;
+}
+
+.bicycles-slider__highway .slick-slide img {
+  min-width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 1100px) {
   .page_quote {
     padding: 60px 0 30px 0;
@@ -613,6 +886,18 @@ body {
 
   .main__contant {
     margin: 50px 0;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .page__coaching {
+    padding: 100px 0 70px 0;
+  }
+}
+
+@media (max-width: 992.98px) {
+  .bicycles__header {
+    margin: 0 0 90px 0;
   }
 }
 
@@ -775,6 +1060,14 @@ body {
     padding: 40px 0;
   }
 
+  .page__bicycles {
+    padding: 40px 0;
+  }
+
+  .page__coaching {
+    padding: 40px 0 60px 0;
+  }
+
   .main__container {
     padding: 0 18px;
   }
@@ -848,8 +1141,16 @@ body {
     display: flex;
   }
 
+  .slider {
+    margin: 0 -18px;
+  }
+
   .slider__items {
-    margin: 0 0 40px 0;
+    margin: 0 0 20px 0;
+  }
+
+  .slider__item {
+    padding: 0 18px;
   }
 
   .slider__controllers {
@@ -875,7 +1176,58 @@ body {
   }
 
   .item__figure {
-    left: 0;
+    left: 14px;
+  }
+
+  .bicycles__header {
+    margin: 0 0 20px 0;
+    display: block;
+    padding: 40px 0 0 0;
+    border-top: 1px solid #e3e3e3;
+  }
+
+  .bicycles__title {
+    margin: 0 0 40px 0;
+  }
+
+  .bicycles__name {
+    color: #151515;
+    font-weight: 600;
+    line-height: 128.571%;
+    margin: 0 0 16px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .bicycles__body {
+    margin: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .__select {
+    display: block;
+  }
+
+  .img-bicycles {
+    background: none;
+    -webkit-filter: none;
+            filter: none;
+  }
+
+  .menu-bicycles {
+    display: none;
+  }
+
+  .coaching__title {
+    padding: 40px 0 0 0;
+    border-top: 1px solid #e3e3e3;
   }
 }
 
@@ -919,6 +1271,28 @@ body {
     width: 40px;
     height: 40px;
   }
+
+  .bicycles__name {
+    font-size: 14px;
+  }
+
+  .__select {
+    font-size: 11px;
+    height: 30px;
+  }
+
+  .__select[data-state=active] .__select__label + .__select__input + .__select__label {
+    max-height: 30px;
+  }
+
+  .__select__content {
+    top: 30px;
+  }
+
+  .bicycles-slider__highway .slick-dots li button {
+    width: 4px;
+    height: 4px;
+  }
 }
 
 @media (max-width: 379.98px) {
@@ -927,5 +1301,3 @@ body {
     line-height: 150%;
   }
 }
-
-.webp .img-bicycles{ background: url(../img/highway/Placeholder.webp); }
